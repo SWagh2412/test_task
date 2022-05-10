@@ -11,11 +11,10 @@
     </div>
   <% end %>
 
-  <!-- <div>
-    <%#= form.label :beer_type, style: "display: block" %>
-    <%#= form.text_field :beer_type %>
+  <div>
+    <h2><%= @beer.beer_type %></h2>
   </div>
- -->
+
   <div>
     <%= form.label :stock, style: "display: block" %>
     <%= form.number_field :stock %>

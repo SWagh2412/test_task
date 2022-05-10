@@ -12,26 +12,10 @@ class BeersController < ApplicationController
 
   # GET /beers/new
   def new
-    @beer = Beer.new
   end
 
   # GET /beers/1/edit
   def edit
-  end
-
-  # POST /beers or /beers.json
-  def create
-    @beer = Beer.new(beer_params)
-
-    respond_to do |format|
-      if @beer.save
-        format.html { redirect_to beer_url(@beer), notice: "Beer was successfully created." }
-        format.json { render :show, status: :created, location: @beer }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @beer.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /beers/1 or /beers/1.json
@@ -44,16 +28,6 @@ class BeersController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /beers/1 or /beers/1.json
-  def destroy
-    @beer.destroy
-
-    respond_to do |format|
-      format.html { redirect_to beers_url, notice: "Beer was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
